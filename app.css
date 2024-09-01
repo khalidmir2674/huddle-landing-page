@@ -1,0 +1,185 @@
+
+
+:root {
+    --OpenSansFont: "Open Sans", sans-serif;
+    --PoppinsFont: "Poppins", sans-serif;
+
+    /* ### Primary Colors */
+
+    --Violet: hsl(257, 40%, 49%);
+    --SoftMagenta: hsl(300, 69%, 71%);
+}
+
+body {
+    font-family: var(--OpenSansFont);
+    padding: 0;
+    margin: 0;
+    background-color: var(--Violet);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+main {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: var(--PoppinsFont);
+    font-size: clamp(1.5rem, 2vw, 2.2185rem);
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.bgDesktop {
+    position: absolute;
+    z-index: -1;
+}
+
+.bgMobile {
+    position: absolute;
+    visibility: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+header img {
+    width: 200px;
+}
+
+.main {
+    display: flex;
+}
+
+.main .illustMockups {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustMockups .illustImg {
+    margin: auto 0;
+    
+}
+
+.main .aside {
+    padding: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.aside .asidePara {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: clamp(0.2rem, 1vw + 0.6rem, 1rem);
+}
+
+.aside .asideBtn {
+    color: var(--Violet);
+    background-color: white;
+    padding: 1rem 3.75rem;
+    border-radius: 30px;
+    margin-top: 20px;
+    border-style: none;
+    font-size: clamp(0.2rem, 1vw + 0.6rem, 1rem);
+    box-shadow: 0px 6px 12px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aside .asideBtn:hover {
+    cursor: pointer;
+    background-color: var(--SoftMagenta);
+    color: white;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+footer img {
+    width: 2.5rem;
+    margin:0 10px 0 10px;
+}
+
+footer img:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px){
+    h1 {
+        text-align: center;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .main .aside{
+        display: flex;
+        flex-direction:column ;
+        justify-content: center;
+        align-items: center;
+        max-width: 90%;
+    }
+
+    .aside .asidePara {
+        text-align: center;
+    }
+
+    footer {
+        justify-content: center;
+    }
+
+    .bgDesktop {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 501px){
+    .main .aside {
+        padding: 3rem 0 3rem 0;
+    }
+
+    .aside .asideBtn {
+        padding: 1rem 6rem;
+    }
+
+    .bgDesktop {
+        visibility: hidden;
+        width: 20px;
+    }
+    
+    .bgMobile {
+        position: absolute;
+        visibility: visible;
+        z-index: -1;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    header img {
+        width: 160px;
+    }
+
+    footer img {
+        width: 2rem;
+    }
+}
